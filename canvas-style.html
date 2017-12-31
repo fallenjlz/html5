@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	</style>
+</head>
+<body>
+	<canvas id="drawing" width="600px" height="400px"></canvas> 
+	<script>
+		var drawing = document.getElementById("drawing");
+		if(drawing.getContext){
+			var context = drawing.getContext("2d");
+			//绘制红色矩形
+			context.fillStyle = "#ff0000";
+			context.fillRect(10,10,50,50);
+			//绘制半透明的蓝色矩形 rect(x, y, width, height):从点(x,y)开始绘制矩形，宽度width和高度height指定。
+			context.fillStyle = "rgba(0,0,255,0.5)"
+			context.fillRect(30,30,50,50)
+            
+            //在两个矩形重叠的地方清除一个小矩形
+			context.clearRect(40,40,10,10);
+
+			//描边颜色通过strokeStyle属性指定。
+			context.strokeStyle = "#ff0000";
+			context.strokeRect(10,10,50,50);
+
+			context.strokeStyle = "rgba(0,0,255,0.5)";
+			context.strokeRect(30,30,50,50);
+            
+            //开始路径 要绘制路径，首先必须调用beginPath()
+			context.beginPath();
+			
+			//绘制外圆
+			context.arc(100, 100, 99, 0, 2 * Math.PI, false);//(x,y)圆心， 半径， 起始和结束角度， 最后一个参数表示其实角度是否按逆时针方向计算，值为false表示按顺时针方向计算。
+
+			//绘制内圆
+			context.moveTo(194, 100);
+			context.arc(100, 100, 94, 0, 2 * Math.PI, false);
+
+			//绘制分针
+			context.moveTo(100, 100);//将绘图游标移动到(x,y)，不画线。
+			context.lineTo(100, 15); //从上一点开始绘制一条直线，到(x,y)为止.
+
+			//绘制时针
+			context.moveTo(100, 100);
+			context.lineTo(35, 100);
+
+			//描边路径
+			context.stroke();
+
+			//isPointInPath()方法。这个方法接受x和y坐标作为参数，用于在路径被关闭之前确定话不上的某一点是否位于路径上。
+			if(context.isPointInPath(100,100)){
+				alert("Point (100,100) is in the path.")
+			}
+
+			//绘制文本
+			context.font = "bold 14px Arial";
+			context.textAlign = "center";
+			context.textBaseline = "middle";
+			context.fillText("12", 100, 20)//要绘制的文本字符串，x坐标，y坐标和可选的最大像素宽度
+
+			//起点对齐
+			context.textAlign = "start";
+			context.fillText("12", 100, 40);
+
+			//终点对齐
+			context.textAlign = "end";
+			context.fillText("12", 100, 60);
+
+			//rotate(angle):围绕原点旋转图像angle弧度。
+			//scale(scaleX,scaleY):缩放图像，在x 方向乘以scaleX，在y 方向乘以scaleY。scaleX和scaleY 的默认值都是1.0。
+            //translate(x,y):将坐标原点移动到(x,y)。执行这个变换之后，坐标(0,0)会变成之前由(x,y)表示的点。
+            //transform(m1_1, m1_2, m2_1, m2_2, dx, dy):
+
+            //绘制图像
+            //var image = document.images[0];
+            //context.drawImage(image, 10, 10);
+
+            //设置阴影
+            context.shadowOffsetX = 5;
+            context.shadowOffsetY = 5;
+            context.shadowBlur = 4;
+            context.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+           //渐变
+           var gradient = context.createLinearGradient(30,30,70,70);
+           gradient.addColorStop(0, "white");
+           gradient.addColorStop(1, "yellow"); //addColorStop()方法来指定色标。这个方法接收两个参数 色标位置和CSS 颜色值。色标位置是一个0（开始的颜色）到1（结束的颜色）之间的数字
+
+           //绘制渐变矩形
+           context.fillStyle = gradient;
+           context.fillRect(30,30,50,50);
+
+           function createRectLinearGradient(context, x, y, width, height){
+           	return context.createLinearGradient(x, y, x+width, y+height);
+           }
+           var gradient = createRectLinearGradient(context, 30, 30, 50, 50);
+            gradient.addColorStop(0, "white");
+           gradient.addColorStop(1, "yellow");
+           context.fillStyle = gradient;
+           context.fillRect(30,30,50,50);
+
+           //创建径向渐变
+           var gradient = context.createRadialGradient(55, 55, 10, 55, 55, 30);
+           gradient.addColorStop(0, "white");
+           gradient.addColorStop(1, "black");
+           //绘制红色矩形
+           context.fillStyle = "#ff0000";
+           context.fillRect(10, 10, 50, 50);
+           //绘制渐变矩形
+           context.fillStyle = gradient;
+           context.fillRect(30, 30, 50, 50);
+
+
+
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+body{
+	font-family: Arial;
+	font-size:20px;
+}
+
+body,ul{
+	margin:0;
+	padding: 0;
+	list-style:none;
+}
+
+.wrap{
+	width:70%;
+	height: 200px;
+	margin:50px auto;
+	background: #fff;
+}
+
+.wrap h1{
+	font-size:20px;
+	text-align: center;
+	line-height: 200px;
+}
+
+
+/*box-shadow: h-shadow v-shadow blur spread color inset
+h-shadow:水平阴影的位置。允许负值。
+v-shadow:垂直阴影的位置。允许负值。
+blur:模糊距离。
+spread:阴影的尺寸。
+color:阴影的颜色。请参阅CSS颜色值。
+inset:将外部阴影（outset）改为内部阴影。*/
+
+/*浏览器兼容:
+ IE9+、 Firefox4、 Chrome、 Opera以及Safari5.1.1支持box-shadow属性。*/
+
+.effect{
+	position:relative;
+	box-shadow:0px 1px 4px rgba(0,0,0,0.3),0px 0px 40px rgba(0,0,0,0.1) inset;
+	-webkit-box-shadow:0px 1px 4px rgba(0,0,0,0.3), 0px 0px 40px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow:0px 1px 4px rgba(0,0,0,0.3), 0px 0px 40px rgba(0,0,0,0.1) inset;
+	-o-box-shadow:0px 1px 4px rgba(0,0,0,0.3), 0px 0px 40px rgba(0,0,0,0.1) inset;
+}
+
+/*:after选择器：在被选元素的内容后面插入内容
+:before选择器：在被选元素的内容前面插入内容
+说明：需使用content属性来指定要插入的内容
+对于IE8及更早版本中的：after,必须声明<!DOCTYPE>*/
+
+.effect:after,.effect:before{
+    content:'';
+    background: #f00;
+    position: absolute;
+    z-index:-1;
+    top:50%;
+    bottom:0;
+    left:10px;
+    right: 10px;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -o-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     border-radius:100px/10px;
+}
+
+.box{
+	width:980px;
+	height: auto;
+	clear:both;
+	overflow: hidden;
+	margin: 20px auto;
+}
+
+.box li{
+	width:300px;
+	height: 210px;
+	position: relative;
+	background: #fff;
+	float:left;
+	margin:20px 10px;
+	border:2px solid #efefef;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.27), 0 0 60px rgba(0,0,0,0.1) inset;
+	-o-box-shadow: 0px 1px 4px rgba(0,0,0,0.27), 0 0 60px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.27), 0 0 60px rgba(0,0,0,0.1) inset;
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.27), 0 0 60px rgba(0,0,0,0.1) inset;
+}
+
+.box li img{
+	display: block;
+	width:290px;
+	height: 200px;
+	margin:5px;
+}
+
+.box li:before{
+	content:'';
+	position: absolute;
+	width:90%;
+	height: 80%;
+	left:20px;
+	bottom: 8px;
+	z-index:-1;
+	background: transparent;
+	box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-o-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-transform:skew(-12deg) rotate(-4deg);
+	-moz-transform:skew(-12deg) rotate(-4deg);
+	-o-transform:skew(-12deg) rotate(-4deg);
+	transform:skew(-12deg) rotate(-4deg);
+}
+
+.box li:after{
+	content:'';
+	position: absolute;
+	width:90%;
+	height: 80%;
+	right:20px;
+	bottom: 8px;
+	z-index:-2;
+	background: transparent;
+	box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-o-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-transform:skew(12deg) rotate(4deg);
+	-moz-transform:skew(12deg) rotate(4deg);
+	-o-transform:skew(12deg) rotate(4deg);
+	transform:skew(12deg) rotate(4deg);
+}
+
+/*transform:none|transform-functons
+skew(x-angle,y-angle)定义沿着x和y轴的2D倾斜转换。
+skewX(angle)定义沿着X轴的2D倾斜转换。
+skewY(angle)定义沿着Y轴的2D倾斜转换。*/

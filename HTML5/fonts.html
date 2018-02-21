@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fonts</title>
+	<style>
+		/*font-family
+		  font-size
+		  font-style
+		  font-variant
+		  font-weight
+		  font   Shorthand property to set fonts in a single declaration.*/
+		  /*font: <font-style> <font-variant> <font-weight> <font-size> <font-family>*/
+		  p{
+		  	padding:5px;
+		  	border:medium double black;
+		  	background-color:lightgrey;
+		  	margin:2px;
+		  	float:left;
+		  	font-family: MyFont, cursive;
+		  }
+		  #first{
+		  	font-size:xx-large;
+		  	font-weight: bold;
+		  }
+		  #second{
+		  	font-size:larger;
+		  	font-style: italic;
+		  }
+
+		  /*Setting the Font Style and Weight*/
+
+		  /*Using the Web Fonts*/
+		  /*Your specify web fonts using @font-face*/
+		  @font-face{
+		  	font-family:'MyFont';
+		  	font-style: normal;
+		  	font-weight: normal;
+		  	src:url('http://titan/listings/MyFont.woff');
+		  }
+
+
+	</style>
+</head>
+<body>
+	<p>
+		There are lots of different kinds of fruit - there are over 500
+		varieties of <span id="first">banana</span> alone. By the time we add the countless types of
+		<span id="second">apples, oranges, and other well-known fruit, we are faced with
+		thousands of choices</span>.
+	</p>
+</body>
+</html>

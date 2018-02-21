@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*Applying a Border*/
+        p{
+        	border-width:5px;
+        	border-style:solid;
+        	border-color:black;
+        }
+
+        /*Defining the Border Width*/
+        /*<length>*/
+        /*<perc%>*/
+        /*thin, medium, thick*/
+
+        /*Define the Border Style*/
+        /*none   No border will be drawn*/
+        /*dashed The border will be a series of rectangular dashes.*/
+        /*dotted The border will be a secries of circular dots*/
+        /*double The border will be two parallel lines with a gap between them.*/
+        /*groove The border will appear to have be sunken into the page.*/
+        /*inset  The border will be such that the content looks sunken into the page.*/
+        /*outset The border will be such taht the content looks raised from the page.*/
+        /*ridge  The border will appear raised from the page.*/
+        /*solid  The border will be a single, unbroken line.*/
+
+        /*Applying a Border to a Single Side*/
+        p{
+        	border-width: 5px;
+        	border-style: solid;
+        	border-color: black;
+        	border-left-width:10px;
+        	border-left-style:dotted;
+        	border-top-width:10px;
+        	border-top-style: dotted;
+        }
+
+        /*Using the border Shorthand Properties*/
+        p{
+        	border: medium solid black;
+        	border-top:solid 10px;
+        }
+
+        /*Creating a Border with Rounded Corners*/
+        /*border-top-left-radius,
+          border-top-right-radius,
+          border-bottom-left-radius,
+          border-bottom-right-radius
+          */
+         p{
+         	border:medium solid black;
+         	border-top-left-radius:20px 15px; 
+         	/*The first value specifies the horizontal radius, and the second specifies the vertical radius.*/
+         }
+
+         /*The border-radius shorthand property lets you specify one value for all four corners, or four individual values in a single value.*/
+         #first{
+         	border-radius: 20px / 15px;
+         }
+
+         #second{
+         	border-radius: 50% 20px 25% 5em / 25% 15px 40px 55%
+         }
+
+         /*Using Images As Borders*/
+
+         /*Setting Element Backgrounds*/
+         /*background-color,
+         background-image,
+         background-repeat,
+         background-size,
+         background-position,
+         background-attachment,
+         background-clip,
+         background-origin,
+         background*/
+
+         /*The background-repeat values*/
+         /*repeat-x Repeats the image horizontally; the image may be fragmented.*/
+         /*repeat-y Repeats the image vertically; the image may be fragmented.*/
+         /*repeat Repeats the image in both directions; the image may be fragmented.*/
+         /*space  The image is repeated to fill the space without creating fragments, and the remaining area 
+         is allocated evenly around the images.*/
+         /*round  The image is scaled so that it can be repeated without creating fragments.*/
+         /*no-repeat  The image is not repeated.*/
+
+         /*Setting the Background image Size*/
+         textarea{
+         	border:medium solid black;
+         	background-color:lightgray;
+         	background-image:url(../test7.png);
+         	background-size:60px 60px;
+         	background-repeat:repeat;
+         	background-attachment: scroll;
+         	background-origin:border-box;
+         }
+
+         /*Setting the Attachment for the Background*/
+         /*border-box  The background color and image are drawn within the border box.*/
+         /*padding-box The background color and image are drawn within the padding box.*/
+         /*content-box The background color and image are drawn within teh content box.*/
+
+	</style>
+</head>
+<body>
+	<p>
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+	<p id="first">
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+	<p id="second">
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+
+	<textarea  cols="30" rows="10">
+		There are lots of different kinds of fruit - there are over 500 varieties of
+		banana alone. By the time we add the countless types of apples, oranges, and other
+		well-known fruit, we are faced with thousands of choices.
+	</textarea>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Box Shadow</title>
+	<style>
+		/*Creating a Box Shadow*/
+		/*box-shadow: hoffset voffset blur spread color inset*/
+		p{
+			border:10px double black;
+			box-shadow:5px 4px 10px 2px gray;
+		}
+
+		/*Applying Multiple Shadows to an Element*/
+		p{
+			border:10px double black;
+			box-shadow:5px 4px 10px 2px gray, 4px 4px 6px gray inset;
+		}
+
+		/*Using Outlines*/
+		/*outline-color   Sets the color out the outline.*/
+		/*outline-offset   Sets the offset of the outline..*/
+		/*outline-style Sets the style of the outline.*/
+		/*outline-width  Sets the width of the outline*/
+		/*outline*/
+
+		/*Applying Padding to an Element*/
+		p{
+			border:10px double black;
+			background-color:lightgray;
+			background-clip:content-box;
+			padding-top:0.5em;
+			padding-bottom: 0.3em;
+			padding-right: 0.8em;
+			padding-left:0.6em;
+		}
+
+		/*Appling Margin to an Element*/
+		img{
+			border:4px solid black;
+			background: lightgray;
+			padding:4px;
+			margin:4px 20px;
+			width:150px;
+			width:100px;
+		}
+
+		/*Controlling the Size of an Element*/
+		/*width, height, min-width, min-height, max-width, max-height, box-sizing*/
+		/*box-sizing   Sets which part of an element's box is used for sizing. content-box,
+		padding-box, border-box, margin-box*/
+        #first{
+        	box-sizing: border-box;
+        	/*width:50%;*/
+        }
+
+        #second{
+        	box-sizing:content-box;
+        }
+
+        /*Setting Minimum and Maximum Sizes*/
+        img{
+        	background:lightgray;
+        	border:4px solid black;
+        	margin:2px;
+        	box-sizing:border-box;
+            min-width:100px;
+        	width:30%;
+        	max-width:200px;
+        }
+
+        /*Dealing with Overflowing Content*/
+        /*overflow-x, overflow-y  Set the horizontal or vertical overflow style.*/
+        /*auto, hidden, no-content, no-display, scroll, visible*/
+        .first{
+        	overflow:hidden;
+        }
+
+        .second{
+        	overflow:scroll;
+        }
+
+        /*Controlling Element Visibility*/
+        /*visibility Set the visibility of an element .*/
+        /*collapse  The element isn't visible and dosen't occupy space in the page layout.*/
+        /*hidden    The element isn't visible, but it still occupies space in the pag layout.*/
+        /*visible   This is the default value.*/
+        /*.btn{
+        	visibility:hidden;
+        }*/
+	</style>
+</head>
+<body>
+	<p class="first">
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+
+	<p id="fruittext">
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+
+	<p class="second">
+		There are lots of different kinds of fruit - there are over 500 varieties
+		of banana alone. By the time we add the countless types of apples, oranges,
+		and other well-known fruit, we are faced with thousands of choices.
+	</p>
+	
+	<button>Outline Off</button>
+	<button>Outline On</button>
+
+	<table>
+		<tr>
+			<th>Rank</th><th>Name</th><th>Color</th><th>Size</th>
+		</tr>
+		<tr id="firstchoice">
+			<th>Favorite:</th><td>Apples</td><td>Green</td><td>Medium</td>
+		</tr>
+		<tr>
+			<th>2nd Favorite:</th><td>Oranges</td>
+			<td>Orange</td>
+			<td>Large</td>
+		</tr>
+	</table>
+
+	<p>
+		<button class="btn">Visible</button>
+		<button class="btn">Collopse</button>
+		<button class="btn">Hidden</button>
+	</p>
+
+	<img id="first" src="../test7.png" alt="test7">
+	<img id="second" src="../test7.png" alt="test7">
+	<script>
+		var buttons = document.getElementsByTagName("BUTTON");
+		for(var i =0; i < buttons.length; i++){
+			buttons[i].onclick = function(e){
+				var elem = document.getElementById("fruittext");
+				if (e.target.innerHTML == "Outline Off"){
+					elem.style.outline = "none";
+				} else{
+					elem.style.outlineColor = "red";
+					elem.style.outlineStyle = "solid";
+					elem.style.oulineWidth = "thick";
+				}
+		}
+
+		var btn = document.getElementsByClassName("btn");
+		for(var i = 0; i < btn.length;i++){
+			btn[i].onclick = function(e){
+ 				document.getElementById("firstchoice").style.visibility = e.target.innerHTML;
+			};
+		}	
+	</script>
+</body>
+</html>

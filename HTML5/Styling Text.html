@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Styling Text</title>
+	<style>
+		/*Aligning and Justifu Text*/
+		/*
+		text-align  Specifies the alignment for a block of text.
+		 */
+		/*
+		text-justify 
+		 */
+		#fruittext{
+			width:400px;
+			margin:5px;
+			padding:5px;
+			border:medium double black;
+			background-color:lightgray;
+			white-space: pre-line;
+			word-spacing:10px;
+			letter-spacing:2px;
+			line-height: 3em;
+
+		}
+		/*Dealing with Whitespace*/
+		/*whitespace Specifies how white-space characters will be processed*/
+		/*normal  nowrap  pre  pre-line  pre-wrap*/
+
+		/*Specifying Text Direction*/
+		/*direction    Sets the direction for the text*/
+		#first{
+			direction: ltr;
+		}
+
+		#second{
+			direction: rtl;
+		}
+
+		/*Specifying the Space Between Words, Letters, and Lines*/
+		/*You can tell the browser how much space to place between words, letters, and lines.*/
+		/*letter-spacing  Sets the space between letters.*/
+		/*word-spacing  Sets the space between words.*/
+		/*line-height  Sets the height of each line.*/
+
+		/*Controlling Word Breaks*/
+		/*The word-wrap property tells the browser what to do when a word is longer than its containing block is wide.*/
+		/*normal   Words are not broken, even when they cannot be fitted into the containing element.*/
+		/*break-word   Words are broken to make them fit.*/
+        .first,.second{
+        	width:150px;
+        	margin:15px;
+        	padding:5px;
+        	border:medium double black;
+        	background-color:lightgray;
+        	float: left;
+        }
+        .first{
+        	word-wrap:break-word;
+
+        }
+        .second{
+        	word-wrap:normal;
+        }
+
+        /*Indenting the First Line*/
+        /*text-indent   Set the indentation of the first line of text*/
+        p{
+        	margin:15px;
+        	padding:5px;
+        	border:medium double black;
+        	background-color:lightgrey;
+        	float:left;
+        	text-indent: 15%;
+        	text-transform: uppercase;
+        }
+
+        /*Decorating and Transforming Text*/
+        /*
+        text-decoration:
+         		none
+         		underline
+         		overline
+         		line-through
+         		blink;
+         */
+        /*
+        text-transform:
+        		none
+        		capitalize
+        		uppercase
+        		lowercase;
+         */
+        /*Creating Text Shadows*/
+        /*text-shoadow  Applies a shadow to a block of text.
+        *h-shadow  v-shadow  blur  color
+        */
+       h1{
+       	text-shadow: 0.1em .1em 1px lightgrey;
+       }
+
+	</style>
+</head>
+<body>
+	<p id="fruittext">
+		There are lots of different kinds of fruit - there are over 500
+		varieties
+
+		of banana alone. By the time we add the countless types of
+		apples, oranges, and other well-known fruit, we are faced with
+		thousands of choices.
+
+		One of the most interesting aspects of fruit is the
+		variety available in each country. I live near London,
+
+		in an area which is
+		known for its apples.
+	</p>
+	<p>
+		<button>Start</button>
+		<button>End</button>
+		<button>Left</button>
+		<button>Right</button>
+		<button>Justify</button>
+		<button>Center</button>
+	</p>
+	<p id="first">
+		This is left-to-right text
+	</p>
+	<p id="second">
+		This is right-to-left text
+	</p>
+	<p class="first">
+		There are lots of different kinds of fruit - there are over 500
+		varieties of madeupfruitwithaverylongname alone.
+	</p>
+	<p class="second">
+		There are lots of different kinds of fruit - there are over 500
+		varieties of madeupfruitwithaverylongname alone.
+	</p>
+	<p>
+		There are lots of different kinds of fruit - there are over 500
+		varieties of banana alone. By the time we add the countless types of 
+		apples, oranges, and other well-known fruit, we are faced with
+		thousands of choices.
+		One of the most interesting aspects of fruit is the
+		variety available in each country. I live near London, in an area which is
+		known for its apples.
+	</p>
+
+	<h1>
+		Thoughts about Fruit
+	</h1>
+	<script>
+		var buttons = document.getElementsByTagName("button");
+		for(var i = 0; i < buttons.length; i++){
+			buttons[i].onclick = function(e){
+			   	document.getElementById("fruittext").style.textAlign = e.target.innerHTML;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animation</title>
+	<style>
+		/*Using Animation*/
+		/*animation:animation-name animation-duration animation-timing-function 
+		animation-delay animation-iteration-count*/
+        /*The Animaiton Properties*/
+        /*animation-delay  Sets a delay before the animation commences.*/
+        /*animation-direction Specifies whether the animation should be played backward on alternate cycles.*/
+        /*animation-duration Specifies the span of time over which the animation will be performed. */
+        /*animation-iteration-count Specifies the number of times the animation will be performed.*/
+        /*animation-name:Specifies the name of the animation./
+        /*animation-play-state: Allows the animation to pe paused and resumed.*/
+        /*animation-timing-function:Specifies how intermediate animation values area calculated.See the section"Using Transtions,*
+        earlier in this chapter, for details of these values/
+        /*animation:Shorthand property.*/
+
+        p{
+        	padding:5px;
+        	border:medium double black;
+        	background-color:lightgray;
+        	font-family: sans-serif;
+        }
+
+        #banana{
+        	font-size:large;
+        	border:medium solid black;
+        }
+
+        #banana:hover{
+        	-webkit-animation-delay:100ms;
+        	-webkit-animation-duration:500ms;
+        	-webkit-animation-iteration-count:infinite;
+        	-webkit-animation-timing-function:linear;
+        	-webkit-animation-name:'GrowShrink';
+        	/*Setting the Repeat Direction*/
+        	-webkit-animation-direction:alternate;
+        	/*normal:Every iteration of the animation is playede forward.*/
+        	/*alternate The animation is played forward and then in reverse.*/
+
+        	/*Understading the End State*/
+
+        }
+
+        @-webkit-keyframes GrowShrink{
+        	 /*Setting an Initaila State with a from clause*/
+        	from{
+              font-size:xx-small;
+              background-color: red;
+        	}
+
+        	/*Specifying Intermediate KeyFrames
+        	You can do this by adding percentate clauses*/
+
+        	/*
+        	Applying Animations to the Initial Layout
+        	 */
+        	#banana{
+				font-size:large;
+				border:medium solid black;
+				-webkit-animation-duration:2500ms;
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-direction:alternate;
+				-webkit-animation-timing-function:linear;
+				-webkit-animation-name:'ColorSwap';
+        	}
+
+        	@-webkit-keyframes ColorSwap{
+        		to{
+        			border:medium solid white;
+        			background-color:green;
+        		}
+        	}
+
+        	50%{
+        		background-color:yellow;
+        		padding:10px;
+        	}
+
+        	75%{
+        		color:white;
+        		padding:2px;
+        	}
+        	
+        	to{
+        		font-size:x-large;
+        		border:medium solid white;
+        		background-color:green;
+        		color:white;
+        		padding: 4px;
+        	}
+        }
+
+        /*Working with Key Frames*/
+        /*The key frames aspect of CSS animatins is extremely flexible and well worth exploring.*/
+
+
+        /*Understading the End State*/
+        /*At the end of the animation, the appearance of the animated element will revert to its original state.*/
+
+
+
+	</style>
+</head>
+<body>
+	<p>
+		There are lots of different kinds of fruit - there are over 500
+		varieties of <span id="banana">banana</span> alone. By the time we add the
+		countless types of apples, oranges, and other
+		well-known fruit, we are faced with thousands of choices.
+	</p>
+</body>
+</html>

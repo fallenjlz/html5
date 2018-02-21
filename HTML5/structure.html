@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.header{
+			background-color:#;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h1>How the World Could End</</h1>
+		<p class="Teaser"></p>
+		<p class="Byline"></p>
+	</div>
+	<div class="content">
+		<p></p>
+		<p></p>
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="footer">
+		<p></p>
+	</div>
+	<p>
+		<label for="name">
+		  	<input id="name" name="name" placeholder="name">
+	    </label>
+	</p>
+
+	<p>
+		<label for="fave">numbers:
+		  	<input id="fave" name="fave"  step="1" min="1" max="100" type="range">
+	    </label>
+	</p>
+
+	<p>
+		<label for="fave" style="vertical-align: top">
+			Favorite Fruit:
+			<select name="fave" id="fave" size="5" multiple>
+				<option value="apples" selected label="Apples">Apple</option>
+				<option value="oranges" label="oranges">Oranges</option>
+				<option value="cherries" label="Cherries">Cherries</option>
+				<option value="pears" label="Pears">Pears</option>
+			</select>
+		</label>
+
+		<label for="name">
+			Name: <input value="Adam" id="name" name="name">
+		</label>
+
+		<label for="password">
+			Password: <input type="password" placeholder="Min 6 characters" id="password" name="password">
+		</label>
+
+		<!-- using the optgrounp element to group option elements together -->
+		<p>
+			<label for="fave" style="vertical-align: top">
+				Favorite Fruit:
+				<select name="fave" id="fave">
+					<optgroup label="Top Choices">
+						<option value="apples" label="Apples">Apples</option>
+						<option value="oranges" label="Oranges">Oranges</option>
+					</optgroup>
+					<optgroup label="Others">
+						<option value="Cherries" label="Cherries">Apples</option>
+						<option value="pears" label="Pears">Oranges</option>
+					</optgroup>
+				</select>
+			</label>
+		</p>
+	</p>
+
+	<!-- Capturing Mutiple Lines of Text -->
+	<!-- textarea element creates a multiline text box  -->
+	<!-- wrap attribute controls how line breaks are inserted into the text when the form is submitted. -->
+	<p><textarea name="story" id="story" cols="30" rows="10">
+		Tell us why this is your favorite fruit
+	</textarea></p>
+
+    <form onsubmit="return false" oninput="res.value = quant.valueAsNumber * price.valueAsNumber">
+    	<fieldset>
+    		<legend>Price Calculator</legend>
+    		<input type="number" placeholder="Quantity" id="quant" name="quant">
+    		<input type="number" placeholder="Price" id="price" name="price">
+    		<output for="quant name" name="res">
+    	</fieldset>
+    </form>
+
+    <input type="hidden" name=recordID value="1234">
+
+    <!-- Ensuring a Value Matches a Pattern -->
+    <!-- The pattern attribute ensures that a value mathces a regular expression. -->
+    <p>
+    	<label for="name">
+    		Name:
+    		<input type="text" id="name" name="name" pattern="^.*.*$">
+    	</label>
+    </p>
+    <p>
+    	<label for="password">
+    		Password: <input type="password"
+    		    placehoder="Min 6 characters" id="password" name="password">
+    	</label>
+    </p>
+
+    <!-- Ensuring a Value is an E-mail Address or URL -->
+    <p>
+    	<label for="email">
+    		Email: <input type="email" placeholder="user@mydomain.com" required
+    		  	pattern=".*@mydomain.com$" id="email" name="email">
+    	</label>
+    </p>
+
+    <!-- Disabling Input Validation -->
+    <!-- There are times when you want to allow the user to submit the form without validating the contents. -->
+    <form action="http://titan:8080/form" method="post">
+	    <p>
+	    	<label for="name">
+	    		Name:
+	    		<input type="text" id="name" name="name" pattern="^.*.*$">
+	    	</label>
+	    </p>
+
+	    <p>
+	    	<label for="email">
+	    		Email: <input type="email" placeholder="user@mydomain.com" required
+	    		  	pattern=".*@mydomain.com$" id="email" name="email">
+	    	</label>
+        </p>
+        <input type="submit" value="Submit">
+        <input type="submit" value="Save" formnovalidate>
+    </form>
+
+    <!-- Embedding Content -->
+    <!-- Embedding an Image -->
+    <!-- The img element allows you to embed an image an HTML document. -->
+    <!--  src, alt , height , width, usemap ismap -->
+    <!-- border, longdesc, name, align, hspace, vspace --> <!-- html5 -->
+    <p>
+    	<img src="../test7.png" alt="test7" width="200" height="67">
+    </p>
+
+</body>
+</html>

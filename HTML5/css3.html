@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3</title>
+	<style>
+		/*Using Pseudo-Element Selectors*/
+		/*Using the ::first-line Selector*/
+		/*The::first-line selector matches the first line of a block of text.*/
+		::first-line{
+			background-color:grey;
+			color:white;
+		}
+		/*Using the::first-letter Selector*/
+		::first-letter{
+			background-color:#F6F619;
+			color:#E519F6;
+			border:thin #13ECEC solid;
+			padding:4px;
+		}
+
+		/*Using the :before and :after Selectors*/
+		/*:before Inserts content before the content of the selected elements.*/
+		/*:after  Inserts content after the content of the selected elements.*/
+		a:before{
+			content:"Click here to ";
+		}
+		a:after{
+			content:"!";
+		}
+
+		/*Using the Structural Pseudo-Class Selectors*/
+		/*Using the :root Selector*/
+		/*Always return the html element.*/
+		:root{
+			border:thin #10DB94 solid;
+			padding:4px;
+		}
+
+		/*Using the Child Selectors*/
+		/*Using the :first-child Selector*/
+		/*The:first-child selector will match elements that are the element*/
+		:first-child{
+   			border:thin #F12B88 solid;
+   			padding:4px;
+		}
+
+		/*You can be more specific by using the:first-child selector as a modifier and, optionally, combining it with other selectors.*/
+		/*This selector will match any span element that is the first child of a p element.*/
+		p > span:first-child{
+			border: thin #51E5F1 solid;
+			padding:2px;
+		}
+
+		/*Using the :last-child Selector*/
+		/*The:last-child selector selects elements that are the last elements defined by their containing element.*/
+		:last-child{
+			border:1px #DAF7A6 solid;
+			padding:3px;
+		}
+
+		/*Using the :only-child Selector*/
+		/*The :only-child selector matches elements that are the only elements contained by their parent.*/
+		:only-child{
+			border:1px black solid;
+			padding: 4px;
+		}
+
+		/*Using the :only-of-type selector*/
+		:only-of-type{
+			border:thin black solid;
+			padding:4px;
+		}
+
+		/*Using the nth-Child Selectors*/
+		/*:nth-child(n) Selects elements that are the nth child of their parent.*/
+		body> :nth-child(2){
+			border: thin black solid;
+			padding:4px;
+		}
+
+		/*Using the UI Pseudo-Class Selectors*/
+		/*The UI pseudo-class selectors allow you to select elements based on their state.*/
+		/*Selecting Enabled/Disabled Elements*/
+		/*:enabled  Selects elements that are in their enabled state*/
+		/*:disabled  Selects elements that are in their diabled state*/
+		/*:checked Selects elements that are in a checked state.*/
+
+	</style>
+</head>
+<body>
+	<p>
+		Fourscore and seven years ago our fathers brought forth
+		on this continent a new nation, conceived in liberty, and
+		dedicated to the proposition that all men are created equal.
+	</p>
+	<p>I like <span lang="en-uk" class="class2">apples</span>and <span>oranges</span>.</p>
+	<a href="http://w3c.org">Visit the W3C website</a>
+</body>
+</html>

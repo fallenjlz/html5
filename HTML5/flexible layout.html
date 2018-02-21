@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flexible box</title>
+	<style>
+		/*box-align*/
+		/*Tells the browser how to deal with additional space shen the height of the content elements is 
+		less than the height of the container.   start  end  center baseline  stretch*/
+		/*box-flex*/
+		/*Specifies the flexibility of an element:applied to individual elements within the flexbox container.*/
+		/*box-pack*/
+		/*Tells the browser how to allocate space when the flexible elements have reached their maximum size.  end  center justify*/
+		p{
+			width:150px;
+			max-width:250px;
+			border:medium double black;
+			background-color:lightgray;
+			margin:2px;
+		}
+
+		#container{
+			display: -webkit-box;
+			-webkit-box-pack:justify;
+			-webkit-box-direction:reverse;
+			-webkit-box-align:end;
+		}
+
+		#second{
+			-webkit-box-flex:1;
+		}
+
+		/*Flexing Multiple Elements*/
+		#first{
+			-webkit-box-flex:3;
+		}
+
+		/*Dealing with Vertical Space*/
+		/*box-align  Specifies how the browser should handle excess vertical space.   start  end   strectch  end*/
+        
+
+        /*Dealing with Maximum Sizes*/
+        /*box-pack  Specifies how to deal with additional space if it cannot be allocated to flexible elements.*/
+        /*start  The elements are laid out from the left edge and any unallocated space is displayed to the right of 
+        the final element*/
+        /*end    The elements are laid out from the right edge and any unallocated space is displayed to the left of
+        the first element*/
+        /*center  Any unallocated additional space is allocated evenly on the left side on the first element and the right
+        side of the final element*/
+        /*justify Any unallocated space is spread evenly between the elements.*/
+
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<p id="first">
+			There are lots of different kinds of fruit - there are over 500 varieties
+			of banana alone. By the time we add the countless types of apples,
+			oranges, and other well-known fruit, we are faced with thousands
+			of choices.
+		</p>
+		<p id="second">
+			One of the most interesting aspects of fruit is the variety available in
+			each country. I live near London, in an area which is known for
+			its apples.
+		</p>
+		<p id="third">
+			When travelling in Asia, I was struck by how many different kinds of
+			banana were available - many of which had unique flavours and which
+			were only avaiable within a small region.
+		</p>
+	</div>
+</body>
+</html>

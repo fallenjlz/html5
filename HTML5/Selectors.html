@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 selectors</title>
+	<style>
+		/*Using the UI Pseudo-Class Selectors*/
+		/*The UI pseudo-class selectors allow you to select elements based on their state.*/
+		/*Selecting Enabled/Disabled Elements*/
+		/*:enabled  Selects elements that are in their enabled state*/
+		/*:disabled  Selects elements that are in their diabled state*/
+		/*:checked Selects elements that are in a checked state.*/
+		/*Selecting Checked Elements*/
+		:checked + span{
+			background-color: red;
+			color:white;
+			padding:5px;
+			border:medium solid black;
+		}
+
+		/*Selecting Default Elements*/
+        :default{
+        	outline:medium solid red;
+        }
+
+        /*Selecting Valid and Invalid input Elements*/
+        /*:valid  Selects input elements that are valid or invalid, based on input validation*/
+ 		:invalid{
+ 			outline:medium solid red;
+ 		}
+ 		:valid{
+ 			outline:medium solid green;
+ 		}
+
+ 		/*Selecting input Elements with Range Limitations*/
+		:in-range{
+			outline: medium solid green;
+		}
+
+		:out-of-range{
+			outline: medium solid red;
+		}
+
+		/*Selecting Required and Optional input*/
+		/*:required selector matches input elements that have the required attribute.*/
+        :required{
+        	outline: medium solid green;
+        }
+        :optional {
+        	outline: medium solid red;
+        }
+
+        /*Using the Dynamic Pseudo-Class Selectors*/
+        /*:link   Selects link elements.*/
+        /*:visited   Selects link elements that the user has visited.*/
+        :link{
+        	border:thin black solid;
+        	background-color:lightgrey;
+        	padding:4px;
+        	color:red;
+        }
+
+        :visited{
+        	background-color: grey;
+        	color:white;
+        }
+
+        /*Using the :hover Selector*/
+        :hover{
+        	border: thin black solid;
+        	padding: 4px;
+        }
+
+        /*Using the :active Selector*/
+        /*The elements  that are presently activated by the user, this usually means those elements that are under the pointer when the mouse button is pressed.*/
+        :active{
+        	border:thin yellow solid;
+        	padding:4px;
+        }
+
+        /*Using the :focus Selector*/
+        /*Selects the element that has the focus*/
+        :focus{
+        	border:thin #EDF7A6 solid;
+        	padding: 4px;
+        }
+
+        /*Using the negation Selector*/
+        /*This selector matches all a elements that don't have an href element that contains the string apress.*/
+        a:not([href*="apress"]){
+        	border: thin #04EFFA solid;
+        	padding:6px;
+        } 
+
+        /*Using the :empty Selector */ 
+        /*The :empty selector matches elements that define no children.*/
+
+        /*Using the :lang Selector*/
+        /*Selects elements based on the value of the lange global attribute.*/
+        :lang(en){
+        	border:2px #04EFFA solid;
+        	padding:5px;
+        }
+
+       /* Using the :target Selector*/
+       /*Selects the element referred to by the URL fragment identifier*/
+       :target{
+       	border: thin black solid;
+       	padding:4px;
+       	color:red;
+       }
+
+	</style>
+</head>
+<body>
+	<form action="http://titan:8080/form" method="post">
+		<p>
+			<label for="apples">Do you like apples:</label>
+			<input type="checkbox" id="apples" name="apples">
+			<span>this will go red when checked</span>
+		</p>
+		<input type="submit" value="submit">
+		<button type="submit">Submit Vote</button>
+		<button type="reset">Reset</button>
+		<p><label for="name">Name: <input required id="name" name="name"></label></p>
+		<p><label for="name">City: <input required id="city" name="city"></label></p>
+
+		<p>
+			<label for="price">
+				$ per unit in your area:
+				<input type="number" required min="0" max="100" value="1" id="price" name="price">
+			</label>
+			<label for="price2">
+				$ per unit in your area:
+				<input type="number" min="0" max="100" value="1" id="price2" name="price2">
+			</label>
+		</p>
+
+		<a lang="en-us" id="apressanchor" class="class1 class2" href="http://apress.com">Visit the Apress website</a>
+		<p>I like <span>apples</span> and oranges.</p>
+		<a lang="en" id="w3canchor" href="http://w3c.org">Visit the W3C website.</a>
+
+		name: <input type="text" mame="name">
+		<p/>
+		city: <input type="text" name="city">
+		<p/>
+
+		<a href="http://apress.com">Visit the Apress website</a>
+		<p id="mytarget">I like <span>apples</span> and oranges.</p>
+		<a id="w3clink" href="http://w3c.org">Visit the W3C website</a>
+
+			
+	</form>	
+</body>
+</html>

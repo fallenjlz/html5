@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transforms</title>
+	<style>
+	  /*trabsform:Specifies the transform function to apply.*/
+	  /*transform-orgin:Specifies the origin of the transfrom.*/
+
+	  /*The transform Property Values*/
+
+	  /*translate, translateX , translaeY: Translate an element in the X,Y or both directions.*/
+	  /*scale, scaleX, scaleY: Scale an element along one or both axes.*/
+	  /*rotate: Rotate an element.*/
+	  /*skew, skewX, skewY: Skew an element along one or both axes.*/
+	  /*matrix*/
+
+
+	  /*Applying a Transform to an Element*/
+	  p{
+	  	padding:5px;
+	  	border:medium double black;
+	  	background-color:lightgray;
+	  	font-family: sans-serif;
+	  }
+
+	  span{
+	  	display: inline-block;
+	  }
+
+	  #banana{
+	  	font-size:x-large;
+	  	border:medium solid white;
+	  	background-color:green;
+	  	color:white;
+	  	padding:4px;
+	  	-moz-transform: rotate(-45deg) scaleX(1.2);
+
+	  	/*Specifying an Origin*/
+	  	/*To define a value, you provide a value for each of the each of the x and y axis.If you supply only one value, the
+	  	second value is assumed to be center.*/
+	  	/*Specifies a position on the x axis  left center right*/
+	  	/*Specifies a position on the y axis  top  center  bottom*/
+	  	-moz-transform-origin: right top;
+	  }
+
+	  #banana:hover{
+	  	/*Aimating and Transitoning a Transform*/
+	  	-moz-transition-duration:1.5s;
+	  	-moz-transform:rotate(360deg);
+	  }
+
+	 
+
+	</style>
+</head>
+<body>
+	<p id="fruittext">
+		There are lots of different kinds of fruit - there are over 500
+		varieties of <span id="banana">banana</span> alone. By the time we add the
+		countless types of apples, oranges, and other
+		well-known fruit, we are faced with thousands of choices.
+	</p>
+</body>
+</html>
